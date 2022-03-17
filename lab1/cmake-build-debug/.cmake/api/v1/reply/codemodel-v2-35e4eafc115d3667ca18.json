@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/agwen/sem4/SysOpy/lab1/cmake-build-debug",
-		"source" : "/home/agwen/sem4/SysOpy/lab1"
+		"build" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug",
+		"source" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1"
 	},
 	"version" : 
 	{

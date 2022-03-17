@@ -1,0 +1,20 @@
+[OP] CREATE_TABLE
+Real:	0.0000s
+User:	0.0000s
+System:	0.0000s
+[OP] COUNTING + ALLOCATING
+Real:	0.0000s
+User:	0.0000s
+System:	0.0000s
+[OP] CREATE_TABLE
+Real:	0.0000s
+User:	0.0000s
+System:	0.0000s
+[OP] COUNTING + ALLOCATING
+Real:	0.0100s
+User:	0.0000s
+System:	0.0000s
+[OP] COUNTING + ALLOCATING
+Real:	0.0000s
+User:	0.0000s
+System:	0.0000s

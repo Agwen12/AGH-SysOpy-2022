@@ -1,3 +1,3 @@
-/home/agwen/sem4/SysOpy/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/agwen/sem4/SysOpy/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/agwen/sem4/SysOpy/lab1/cmake-build-debug/CMakeFiles/lab1.dir
+/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug/CMakeFiles/lab1.dir

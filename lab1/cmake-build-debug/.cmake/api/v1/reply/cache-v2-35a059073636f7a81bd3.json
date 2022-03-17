@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/agwen/sem4/SysOpy/lab1/cmake-build-debug"
+			"value" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -451,7 +451,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/agwen/sem4/SysOpy/lab1"
+			"value" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -983,7 +983,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/agwen/sem4/SysOpy/lab1/cmake-build-debug"
+			"value" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1/cmake-build-debug"
 		},
 		{
 			"name" : "lab1_IS_TOP_LEVEL",
@@ -1007,7 +1007,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/agwen/sem4/SysOpy/lab1"
+			"value" : "/home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1"
 		}
 	],
 	"kind" : "cache",
