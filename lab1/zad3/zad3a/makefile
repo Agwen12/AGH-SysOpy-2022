@@ -10,6 +10,7 @@ shared:
 	gcc -shared -fPIC -o libwclibrary.so wclibrary.o
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH=./
 
+
 test_dynamic: shared
 	echo "\n                    DYNAMIC TEST" >> result3a.txt
 	gcc -Wall main.c -ldl -D DYNAMIC -o main
@@ -26,6 +27,8 @@ test_static: static
 	gcc -Wall -c main.c
 	gcc -Wall main.o libwclibrary.a -o main
 	make timer
+
+all: test_static test_shared test_dynamic
 
 timer:
 	./main start_timer create_table 10 stop_timer "initialize array of size: 10"\
