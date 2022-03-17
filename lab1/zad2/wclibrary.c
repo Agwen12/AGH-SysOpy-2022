@@ -27,8 +27,10 @@ void create_block_table(int number_of_blocks) {
 void wc_command(char** files, int number_of_file) {
     if (number_of_file < 1) {
         printf("[ERROR] wc_command requires files as input\n");
+        exit(-1);
     }
     command_array[0] = '\0';
+    printf("[INFO] Performing wc_command on %d files\n", number_of_file);
     strcat(command_array, "wc ");
     for (int i = 0; i < number_of_file; ++i) {
         strcat(command_array, files[i]);
@@ -51,11 +53,11 @@ int reserve_block() {
     single_block->arr = calloc(file_size + 1, sizeof(char));
 
     if (single_block->arr == NULL) {
-        printf("[ERROR] block cannot be allocated\n");
+        printf("[ERROR] Block cannot be allocated\n");
     }
 
     fread(single_block->arr, sizeof(char), file_size, tmp);
-    printf("[INFO] Allocated block of index %d, contents:\n %s\n", index, single_block->arr);
+    printf("[INFO] Allocated block of index: %d\n", index);
     single_block->arr[file_size] = '\0';
     fclose(tmp);
     return index;
@@ -67,22 +69,21 @@ int find_empty_index() {
             return i;
         }
     }
-    printf("[ERROR] table is full\n");
+    printf("[ERROR] Table is full\n");
     exit(-1);
 }
 void remove_block(int index) {
     if (blocks_table[index] == NULL) {
-        printf("[ERROR] block is already empty\n");
+        printf("[ERROR] Block is already empty\n");
     }
-    printf("[INFO] removing block with index:\t%d\n", index);
+    printf("[INFO] Removing block with index: %d\n", index);
     free(blocks_table[index]->arr);
     free(blocks_table[index]);
     blocks_table[index] = NULL;
 }
 
 void print_block(int index) {
-    printf("[INFO]\t block of index:\t%d\n"
-           "contents: %s\n", index, blocks_table[index]->arr);
+    printf("[INFO] Block of index: %d\n", index);
 }
 
 long get_file_size(FILE *fd) {
@@ -93,6 +94,7 @@ long get_file_size(FILE *fd) {
 }
 
 void free_table() {
+    printf("[INFO] Program has finished, freeing memory..\n");
     for (int i = 0; i < ARRAY_SIZE; ++i) {
         if (blocks_table[i] != NULL) remove_block(i);
     }

@@ -1,20 +1,4 @@
-[OP] CREATE_TABLE
-Real:	0.0000s
-User:	0.0000s
-System:	0.0000s
-[OP] COUNTING + ALLOCATING
-Real:	0.0000s
-User:	0.0000s
-System:	0.0000s
-[OP] CREATE_TABLE
-Real:	0.0000s
-User:	0.0000s
-System:	0.0000s
-[OP] COUNTING + ALLOCATING
-Real:	0.0100s
-User:	0.0000s
-System:	0.0000s
-[OP] COUNTING + ALLOCATING
-Real:	0.0000s
-User:	0.0000s
-System:	0.0000s
+Real Time [s] | System Time [s] | User Time [s] | Description
+=============================================================
+     0.010000 |        0.000000 |      0.000000 | wc 1 file
+     0.000000 |        0.000000 |      0.000000 | aaaaaaaaaaaaaaaaaaa

@@ -20,3 +20,4 @@ shared:
 
 clean:
 		rm -f *.o *.a *.so temp main raport2.txt
+
