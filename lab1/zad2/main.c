@@ -23,6 +23,10 @@ void print_report();
 
 int main(int argc, char** argv) {
 
+#ifdef DYNAMIC
+    printf("DDDDDDDDDDDDDDDDDDDnnnnnnnnnnnnaaaaaaaaaaaammmmmmmmmmmmiiiiiiiiiiiicccccccc\n");
+#endif
+
     if (argc <= 1) {
         printf("[ERROR] Not enough arguments\n");
         exit(-1);
@@ -126,7 +130,7 @@ void init_report() {
         fp = fopen("raport2.txt", "a");
     }
     char* header = "Real Time [s] | System Time [s] | User Time [s] | Description\n"
-                   "=============================================================\n";
+                   "==============|=================|===============|============\n";
     fputs( header, fp);
     fclose(fp);
 }

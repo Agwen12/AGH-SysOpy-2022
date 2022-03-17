@@ -1,1 +1,10 @@
- 1  1 22 test2.txt
+       1      145      985 ./text_files/small_1
+       1       21      130 ./text_files/small_2
+       1       12       80 ./text_files/small_3
+    3169   176146  1191187 ./text_files/medium_1
+    3169   176146  1191187 ./text_files/medium_2
+    3169   176146  1191187 ./text_files/medium_3
+   30493  1693848 11455445 ./text_files/big_1
+   21725  1218559  8213980 ./text_files/big_2
+   31477  1783153 11978327 ./text_files/big_3
+   93205  5224176 35222508 total
