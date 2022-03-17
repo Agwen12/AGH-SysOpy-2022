@@ -12,6 +12,7 @@
 clock_t start_time;
 clock_t stop_time;
 
+char* report_output;
 struct tms pcu_start;
 struct tms pcu_stop;
 
@@ -20,6 +21,7 @@ void start_timer();
 void stop_timer(char* operation_description);
 void init_report();
 void print_report();
+void set_output(char* file_name);
 
 int main(int argc, char** argv) {
 
@@ -58,7 +60,8 @@ int main(int argc, char** argv) {
                     strcmp("create_table", argv[arg_idx]) == 0 ||
                     strcmp("remove_block", argv[arg_idx]) == 0 ||
                     strcmp("start_timer", argv[arg_idx]) == 0 ||
-                    strcmp("stop_timer", argv[arg_idx]) == 0)) {
+                    strcmp("stop_timer", argv[arg_idx]) == 0 ||
+                    strcmp("set_report_output", argv[arg_idx]) == 0)) {
 
                 counter++;
                 arg_idx++;
@@ -106,6 +109,10 @@ int main(int argc, char** argv) {
     print_report();
 }
 
+void set_output(char* file_name) {
+    report_output = file_name;
+}
+
 int is_number(char* arg) {
     unsigned long len = strlen(arg);
     for (int i = 0; i < len; ++i) {
@@ -123,8 +130,7 @@ void start_timer() {
 
 void init_report() {
     FILE *fp;
-
-    fp = fopen("raport2.txt", "a");
+    fp = fopen(report_output, "a");
     if (fp == NULL) {
         system("touch raport2.txt");
         fp = fopen("raport2.txt", "a");

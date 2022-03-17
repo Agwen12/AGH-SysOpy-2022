@@ -1,0 +1,63 @@
+
+                    DYNAMIC TEST
+Real Time [s] | System Time [s] | User Time [s] | Description
+==============|=================|===============|============
+     0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
+     0.000000 |        0.000000 |      0.000000 | counting 1 small file
+     0.000000 |        0.000000 |      0.000000 | allocating small block
+     0.000000 |        0.000000 |      0.000000 | counting 3 small files
+     0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
+     0.000000 |        0.000000 |      0.000000 | allocating medium block
+     0.060000 |        6.000000 |      0.000000 | counting 1 big file
+     0.000000 |        0.000000 |      0.000000 | allocating big block
+     0.190000 |       19.000000 |      0.000000 | counting 9 files of various sizes
+     0.000000 |        0.000000 |      0.000000 | allocating the biggest block
+     0.000000 |        0.000000 |      0.000000 | deleting small block
+     0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
+     0.000000 |        0.000000 |      0.000000 | deleting medium block
+     0.000000 |        0.000000 |      0.000000 | deleting big block
+     0.000000 |        0.000000 |      0.000000 | deleting the biggest block
+     0.000000 |        0.000000 |      0.000000 | adding and deleting 7 big blocks
+
+                    STATIC TEST
+Real Time [s] | System Time [s] | User Time [s] | Description
+==============|=================|===============|============
+     0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
+     0.000000 |        0.000000 |      0.000000 | counting 1 small file
+     0.000000 |        0.000000 |      0.000000 | allocating small block
+     0.000000 |        0.000000 |      0.000000 | counting 3 small files
+     0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
+     0.000000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.000000 |        0.000000 |      0.000000 | allocating medium block
+     0.070000 |        7.000000 |      0.000000 | counting 1 big file
+     0.000000 |        0.000000 |      0.000000 | allocating big block
+     0.190000 |       19.000000 |      0.000000 | counting 9 files of various sizes
+     0.000000 |        0.000000 |      0.000000 | allocating the biggest block
+     0.000000 |        0.000000 |      0.000000 | deleting small block
+     0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
+     0.000000 |        0.000000 |      0.000000 | deleting medium block
+     0.000000 |        0.000000 |      0.000000 | deleting big block
+     0.000000 |        0.000000 |      0.000000 | deleting the biggest block
+     0.000000 |        0.000000 |      0.000000 | adding and deleting 7 big blocks
+
+                    SHARED TEST
+Real Time [s] | System Time [s] | User Time [s] | Description
+==============|=================|===============|============
+     0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
+     0.000000 |        0.000000 |      0.000000 | counting 1 small file
+     0.000000 |        0.000000 |      0.000000 | allocating small block
+     0.000000 |        0.000000 |      0.000000 | counting 3 small files
+     0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
+     0.000000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.000000 |        0.000000 |      0.000000 | allocating medium block
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
+     0.000000 |        0.000000 |      0.000000 | allocating big block
+     0.190000 |       18.000000 |      1.000000 | counting 9 files of various sizes
+     0.000000 |        0.000000 |      0.000000 | allocating the biggest block
+     0.000000 |        0.000000 |      0.000000 | deleting small block
+     0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
+     0.000000 |        0.000000 |      0.000000 | deleting medium block
+     0.000000 |        0.000000 |      0.000000 | deleting big block
+     0.000000 |        0.000000 |      0.000000 | deleting the biggest block
+     0.000000 |        0.000000 |      0.000000 | adding and deleting 7 big blocks

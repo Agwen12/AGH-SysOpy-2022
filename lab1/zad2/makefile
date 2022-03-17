@@ -26,9 +26,10 @@ clean:
 		rm -f *.o *.a *.so temp main raport2.txt
 
 test: static
+	rm -f ./raport2.txt
 	gcc -Wall -c main.c
 	gcc -Wall main.o libwclibrary.a -o main
-	./main start_timer create_table 10 stop_timer "initialize array of size: 10"\
+	./main raport2.txt start_timer create_table 10 stop_timer "initialize array of size: 10"\
 		   start_timer wc_command $(dir)small_1 stop_timer "counting 1 small file"\
 		   start_timer allocate stop_timer "allocating small block"\
 		   start_timer wc_command $(dir)small_1 $(dir)small_2 $(dir)small_3 stop_timer "counting 3 small files"\
@@ -49,5 +50,5 @@ test: static
 		   wc_command $(dir)small_1 $(dir)small_2 $(dir)small_3 $(dir)medium_1 $(dir)medium_2\
            								  $(dir)medium_3 $(dir)big_1 $(dir)big_2 $(dir)big_3\
            start_timer $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6)\
-           stop_timer "adding and deleting 7 blocks"
+           stop_timer "adding and deleting 7 big blocks"
 
