@@ -5,13 +5,13 @@ Real Time [s] | System Time [s] | User Time [s] | Description
      0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
      0.000000 |        0.000000 |      0.000000 | counting 1 small file
      0.000000 |        0.000000 |      0.000000 | allocating small block
-     0.010000 |        0.000000 |      0.000000 | counting 3 small files
+     0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.000000 |        1.000000 |      0.000000 | counting 1 medium file
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
      0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
-     0.190000 |       20.000000 |      0.000000 | counting 9 files of various sizes
+     0.200000 |       19.000000 |      0.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
      0.000000 |        0.000000 |      0.000000 | deleting small block
      0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
@@ -28,9 +28,9 @@ Real Time [s] | System Time [s] | User Time [s] | Description
      0.000000 |        0.000000 |      0.000000 | allocating small block
      0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.010000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
-     0.060000 |        7.000000 |      0.000000 | counting 1 big file
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
      0.200000 |       19.000000 |      0.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
@@ -49,11 +49,11 @@ Real Time [s] | System Time [s] | User Time [s] | Description
      0.000000 |        0.000000 |      0.000000 | allocating small block
      0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.010000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
-     0.060000 |        7.000000 |      0.000000 | counting 1 big file
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
-     0.200000 |       19.000000 |      0.000000 | counting 9 files of various sizes
+     0.200000 |       20.000000 |      0.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
      0.000000 |        0.000000 |      0.000000 | deleting small block
      0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
@@ -66,15 +66,15 @@ Real Time [s] | System Time [s] | User Time [s] | Description
 Real Time [s] | System Time [s] | User Time [s] | Description
 ==============|=================|===============|============
      0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
-     0.000000 |        0.000000 |      0.000000 | counting 1 small file
+     0.010000 |        0.000000 |      0.000000 | counting 1 small file
      0.000000 |        0.000000 |      0.000000 | allocating small block
      0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.010000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.000000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
-     0.070000 |        7.000000 |      0.000000 | counting 1 big file
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
-     0.200000 |       20.000000 |      0.000000 | counting 9 files of various sizes
+     0.210000 |       20.000000 |      0.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
      0.000000 |        0.000000 |      0.000000 | deleting small block
      0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block
@@ -89,11 +89,11 @@ Real Time [s] | System Time [s] | User Time [s] | Description
      0.000000 |        0.000000 |      0.000000 | initialize array of size: 10
      0.000000 |        0.000000 |      0.000000 | counting 1 small file
      0.000000 |        0.000000 |      0.000000 | allocating small block
-     0.010000 |        0.000000 |      0.000000 | counting 3 small files
+     0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.010000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
-     0.060000 |        7.000000 |      0.000000 | counting 1 big file
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
      0.200000 |       20.000000 |      0.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
@@ -112,11 +112,11 @@ Real Time [s] | System Time [s] | User Time [s] | Description
      0.000000 |        0.000000 |      0.000000 | allocating small block
      0.000000 |        0.000000 |      0.000000 | counting 3 small files
      0.000000 |        0.000000 |      0.000000 | allocating slightly bigger block
-     0.010000 |        0.000000 |      0.000000 | counting 1 medium file
+     0.010000 |        1.000000 |      0.000000 | counting 1 medium file
      0.000000 |        0.000000 |      0.000000 | allocating medium block
-     0.070000 |        7.000000 |      0.000000 | counting 1 big file
+     0.070000 |        6.000000 |      0.000000 | counting 1 big file
      0.000000 |        0.000000 |      0.000000 | allocating big block
-     0.200000 |       19.000000 |      0.000000 | counting 9 files of various sizes
+     0.190000 |       19.000000 |      1.000000 | counting 9 files of various sizes
      0.000000 |        0.000000 |      0.000000 | allocating the biggest block
      0.000000 |        0.000000 |      0.000000 | deleting small block
      0.000000 |        0.000000 |      0.000000 | deleting slightly bigger block

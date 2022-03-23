@@ -25,10 +25,6 @@ void set_output(char* file_name);
 
 int main(int argc, char** argv) {
 
-#ifdef DYNAMIC
-    printf("DDDDDDDDDDDDDDDDDDDnnnnnnnnnnnnaaaaaaaaaaaammmmmmmmmmmmiiiiiiiiiiiicccccccc\n");
-#endif
-
     if (argc <= 1) {
         printf("[ERROR] Not enough arguments\n");
         exit(-1);
@@ -145,8 +141,8 @@ void stop_timer(char* operation_description) {
     int64_t clk_tck = sysconf(_SC_CLK_TCK);
 
     double real_time = (double) (stop_time - start_time) / clk_tck;
-    double user_time = (double) (pcu_stop.tms_cutime - pcu_start.tms_cutime);
-    double sys_time = (double) (pcu_stop.tms_cstime - pcu_start.tms_cstime);
+    double user_time = (double) (pcu_stop.tms_cutime - pcu_start.tms_cutime) / (double) clk_tck;
+    double sys_time = (double) (pcu_stop.tms_cstime - pcu_start.tms_cstime) / (double) clk_tck;
 
     FILE *fp;
     fp = fopen("raport2.txt", "a");

@@ -23,7 +23,7 @@ shared:
 
 
 clean:
-		rm -f *.o *.a *.so temp main raport2.txt
+		rm -f *.o *.a *.so temp main
 
 test: static
 	rm -f ./raport2.txt

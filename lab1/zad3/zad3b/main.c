@@ -142,9 +142,9 @@ void init_report() {
 void stop_timer(char* operation_description) {
     stop_time = times(&pcu_stop);
     int64_t clk_tck = sysconf(_SC_CLK_TCK);
-    double real_time = (double) (stop_time - start_time) / clk_tck;
-    double user_time = (double) (pcu_stop.tms_cutime - pcu_start.tms_cutime);
-    double sys_time = (double) (pcu_stop.tms_cstime - pcu_start.tms_cstime);
+    double real_time = (double) (stop_time - start_time) / (double) clk_tck;
+    double user_time = (double) (pcu_stop.tms_cutime - pcu_start.tms_cutime) / (double) clk_tck;
+    double sys_time = (double) (pcu_stop.tms_cstime - pcu_start.tms_cstime) / (double) clk_tck;
     FILE *fp;
     fp = fopen("result3b.txt", "a");
     fprintf(fp, " %12f | %15f | %13f | %s\n",

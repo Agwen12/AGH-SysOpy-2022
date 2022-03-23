@@ -1,6 +1,3 @@
-//
-// Created by agwen on 15.03.2022.
-//
 
 #ifndef LAB1_EX01_H
 #define LAB1_EX01_H

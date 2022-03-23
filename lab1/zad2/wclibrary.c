@@ -57,7 +57,6 @@ int reserve_block() {
     }
 
     fread(single_block->arr, sizeof(char), file_size, tmp);
-//    printf("[INFO] Allocated block of index: %d\n", index);
     single_block->arr[file_size] = '\0';
     fclose(tmp);
     return index;

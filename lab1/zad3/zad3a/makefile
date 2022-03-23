@@ -6,9 +6,9 @@ static:
 	ar rcs libwclibrary.a wclibrary.o
 
 shared:
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)
 	gcc -Wall -c -fPIC  wclibrary.c
 	gcc -shared -fPIC -o libwclibrary.so wclibrary.o
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH=./
 
 
 test_dynamic: shared

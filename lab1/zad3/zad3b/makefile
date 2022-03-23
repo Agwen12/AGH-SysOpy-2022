@@ -4,7 +4,7 @@ dir = ../../zad2/text_files/
 static:
 	gcc -Wall -c wclibrary.c
 	ar rcs libwclibrary.a wclibrary.o
-	gcc -Wall -c main.c
+	gcc -Wall $(OPTIMIZATION) -c main.c
 	gcc -Wall $(OPTIMIZATION) main.o libwclibrary.a -o main
 
 test_optimization:
@@ -38,4 +38,4 @@ timer:
     		start_timer $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6) $(aloc7) $(deloc0_6)\
     					stop_timer "adding and deleting 7 big blocks"
 clean:
-		rm -f *.o *.a *.so temp main result3a.txt
+		rm -f *.o *.a *.so temp main result3b.txt
