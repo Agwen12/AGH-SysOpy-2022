@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
         del_n_copy(argv[1], argv[2]);
     } else {
 
-        printf("dej orgumenty:\n" );
+        printf("give arguments:\n" );
 
         char* buffer = calloc(sizeof(char), 777);
         scanf("%10s", buffer);
@@ -78,6 +78,7 @@ int is_line_empty(int scr) {
     }
     // printf("[NOT EMPTY]\n");
     lseek(scr, current_position, SEEK_SET);
+    free(buffer);
     return line_len;
 }
 
@@ -92,7 +93,7 @@ void del_n_copy(char* input, char* output) {
         // printf("%d\n", flag);
         if (flag != -1) {
             // printf("[FLAG] %d\t", flag);
-            char* buffer = calloc(flag, sizeof(char));
+            char* buffer = calloc(flag + 1, sizeof(char));
             read(scr, buffer, flag + 1);
             // printf("[BUFFER]   %s", buffer);
             write(out, buffer, flag + 1);
@@ -130,6 +131,7 @@ int is_line_empty(FILE* scr){
     }
     fseek(scr, current_position, SEEK_SET);
     // printf("[NOT EMPTY]\n" );
+    free(buffer);
     return line_len;
 }
 
