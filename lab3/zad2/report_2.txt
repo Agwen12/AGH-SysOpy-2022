@@ -1,0 +1,48 @@
+=======================================
+PARAMS
+Number of processes: 1
+Rectangle width: 0.100000
+WYNIK = 2.932176
+real: 0.000s user: 0.000s sys: 0.000s
+=======================================
+
+=======================================
+PARAMS
+Number of processes: 10
+Rectangle width: 0.010000
+WYNIK = 3.141602
+real: 0.000s user: 0.000s sys: 0.000s
+=======================================
+
+=======================================
+PARAMS
+Number of processes: 100
+Rectangle width: 0.001000
+WYNIK = 2.828337
+real: 0.010s user: 0.020s sys: 0.000s
+=======================================
+
+=======================================
+PARAMS
+Number of processes: 1000
+Rectangle width: 0.000100
+WYNIK = 3.141599
+real: 0.060s user: 0.230s sys: 0.010s
+=======================================
+
+=======================================
+PARAMS
+Number of processes: 10000
+Rectangle width: 0.000010
+WYNIK = 3.141619
+real: 0.560s user: 2.380s sys: 0.120s
+=======================================
+
+=======================================
+PARAMS
+Number of processes: 10000
+Rectangle width: 0.000000
+WYNIK = 3.138460
+real: 0.550s user: 2.480s sys: 0.120s
+=======================================
+

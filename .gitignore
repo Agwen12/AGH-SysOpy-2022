@@ -54,3 +54,7 @@ dkms.conf
 *.ninja_log
 *.log
 *.xml
+
+.idea*
+*.xml
+*.iml
