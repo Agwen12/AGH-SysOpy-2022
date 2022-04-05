@@ -1,6 +1,0 @@
-# ninja log v5
-0	24	1646992903821624769	CMakeFiles/lab1.dir/main.c.o	ee517d26b77552b
-1	23	1646992903821624769	CMakeFiles/lab1.dir/printlibrary.c.o	b05dd8f774c76d25
-68	870	1646986101533272172	lab1	838300622f4d6bdf
-0	63	1646989355865072423	CMakeFiles/lab1.dir/stringlibrary.c.o	b0d0dac1e3ba4e84
-0	13	1646992903813624808	CMakeFiles/lab1.dir/ex1.c.o	de5a1318550fbfa3
