@@ -15,6 +15,7 @@ long messages_received = 0;
 long awaited_messages = 0;
 int send_back = 0;
 int waited_for = 1;
+char* mode;
 
 void handler_s1(int sig, siginfo_t *info, void *context);
 void handler_s2(int sig, siginfo_t *info, void *context);
@@ -28,6 +29,7 @@ int main(int argc, char** argv) {
         printf("[ERROR] Invalid number of args\n");
         return -1;
     }
+    mode = argv[1];
     if (strcmp("sigrt", argv[1]) == 0) {
         S1 = SIGRTMIN+12;
         S2 = SIGRTMIN+24;
@@ -62,22 +64,10 @@ int main(int argc, char** argv) {
 
 void send(char** argv) {
     if (strcmp("sigrt", argv[1]) == 0 || strcmp("kill", argv[1]) == 0) {
-        for (int i = 0; i < messages_received; i++) {
-            kill(sender_pid, S1);
-            send_back++;
-        }
         printf("[CATCHER] sending S2 to sender\n");
         kill(sender_pid, S2);
     } else if (strcmp("sigqueue", argv[1]) == 0) {
         union sigval value;
-        for (int i = 0; i < messages_received; ++i) {
-            value.sival_int = i;
-            if (sigqueue(sender_pid, S1, value) < 0) {
-                printf("[ERROR] Could not sent signal!\n");
-            } else {
-                send_back++;
-            }
-        }
         value.sival_int = send_back;
         if (sigqueue(sender_pid, S2, value) == 0) {
             printf("[CATCHER] S2 send to sender\n");
@@ -103,7 +93,21 @@ void install_handler(void f(int, siginfo_t*, void*), int sig) {
 
 void handler_s1(int sig, siginfo_t *info, void *context) {
     if(info->si_code == SI_USER || info->si_code == SI_QUEUE) {
+
+        printf("[CATCHER] Received message, id: {%ld}\n", messages_received);
         messages_received++;
+        sender_pid = info->si_pid;
+        if (strcmp("kill", mode) == 0 || strcmp("sigrt", mode) == 0) {
+            printf("[CATCHER] sending S1 to sender\n");
+            kill(sender_pid, S1);
+            send_back++;
+        } else if (strcmp("sigqueue", mode) == 0) {
+            union sigval value;
+            value.sival_int = messages_received;
+            printf("[CATCHER] sending S1 to sender\n");
+            sigqueue(sender_pid, S1, value);
+            send_back++;
+        }
     }
 }
 

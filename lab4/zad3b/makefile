@@ -21,4 +21,4 @@ kill-all: kill-c kill-s
 
 
 tes:
-	./sender `pgrep catcher` 1000 $(MODE)
+	./sender `pgrep catcher` 20 $(MODE)

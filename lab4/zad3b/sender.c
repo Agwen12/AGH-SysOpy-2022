@@ -14,6 +14,7 @@ pid_t catcher_pid = 0;
 int messages_received = 0;
 int waited_for = 1;
 int catcher_send = 0;
+int is_send = 0;
 
 void handler_s1(int sig, siginfo_t *info, void *context);
 void handler_s2(int sig, siginfo_t *info, void *context);
@@ -63,7 +64,11 @@ int main(int argc, char** argv) {
 void send(char** argv, int spam) {
     if (strcmp("sigrt", argv[3]) == 0 || strcmp("kill", argv[3]) == 0) {
         for (int i = 0; i < spam; ++i) {
+            printf("[CATCHER] sending S1\n");
             kill(catcher_pid, S1);
+            is_send = 1;
+            while (is_send) {}
+
         }
         printf("[SENDER] sending S2 to the catcher\n");
         kill(catcher_pid, S2);
@@ -74,6 +79,10 @@ void send(char** argv, int spam) {
             value.sival_ptr = "This is a sender message!";
             if (sigqueue(catcher_pid, S1, value) != 0) {
                 printf("[SENDER] Could not sent message!\n");
+            } else {
+                printf("[SENDER] sending to catcher\n");
+                is_send = 1;
+                while (is_send);
             }
         }
         value.sival_int = messages_received;
@@ -98,8 +107,13 @@ void install_handler(void f(int, siginfo_t*, void*), int sig) {
 
 
 void handler_s1(int sig, siginfo_t *info, void *context) {
+    if (sig != S1) {
+        return;
+    }
     if(info->si_code == SI_USER || info->si_code == SI_QUEUE) {
+        printf("[SENDER] received message from catcher\n");
         messages_received++;
+        is_send = 0;
     }
 }
 
