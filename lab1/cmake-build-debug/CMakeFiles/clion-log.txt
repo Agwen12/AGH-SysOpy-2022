@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /home/agwen/sem4/SysOpy/AGH-SysOpy-2022/lab1 Select CMakeLists.txt
