@@ -1,0 +1,6 @@
+FORK
+  - dziedziczy ignore, handle, mask
+  - nie dziedziczy pending
+
+EXEC
+  - dziedziczy ignore, mask, pending
