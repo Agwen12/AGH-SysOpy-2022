@@ -1,5 +1,0 @@
-
-fork:
-	gcc -Wall main.c -o z_fork
-	./z_fork fork ignore
-	
