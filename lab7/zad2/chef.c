@@ -1,13 +1,18 @@
 //
-// Created by agwen on 12.05.22.
+// Created by agwen on 13.05.22.
 //
 
 
 #include "common.h"
 
-int sem_id;
-int shm_oven_id;
-int shm_table_id;
+sem_t* oven_sem;
+sem_t* table_sem;
+sem_t* full_oven_sem;
+sem_t* full_table_sem;
+sem_t* empty_table_sem;
+
+int shm_oven_fd;
+int shm_table_fd;
 
 oven* ovn;
 table* tab;
@@ -18,15 +23,15 @@ void prep(int type) {
            getpid(),
            get_current_time(),
            type);
-    sleep(PREP_TIME);
+    sleep(PREPARATION_TIME);
 
     // if full_oven_sem == 0 -> it blocks cook process
     // => decrement value before placing in oven
-    lock_sem(sem_id, SEMA_OVEN_FULL);
+    lock_sem(full_oven_sem);
 }
 
 void place_n_bake(int type) {
-    lock_sem(sem_id, SEMA_OVEN);
+    lock_sem(oven_sem);
     ovn->arr[ovn->to_place_idx] = type;
     ovn->to_place_idx++;
     ovn->to_place_idx = ovn->to_place_idx % SIZE_OVEN;
@@ -38,14 +43,13 @@ void place_n_bake(int type) {
            get_current_time(),
            type,
            ovn->pizzas);
-    unlock_sem(sem_id, SEMA_OVEN);
-    sleep(BAKE_TIME);
+    unlock_sem(oven_sem);
+    sleep(BAKING_TIME);
 }
 
-
-void take_out() {
-    lock_sem(sem_id, SEMA_OVEN);
-    int type = ovn->arr[ovn->to_take_out_idx];
+void take_out(int type) {
+    lock_sem(oven_sem);
+    type = ovn->arr[ovn->to_take_out_idx];
     ovn->arr[ovn->to_take_out_idx] = -1;
     ovn->to_take_out_idx++;
     ovn->to_take_out_idx = ovn->to_take_out_idx % SIZE_OVEN;
@@ -59,18 +63,18 @@ void take_out() {
            type,
            ovn->pizzas,
            tab->pizzas);
-    unlock_sem(sem_id, SEMA_OVEN);
+    unlock_sem(oven_sem);
 
     // increment sema_oven_full cuz pizza out
-    unlock_sem(sem_id, SEMA_OVEN_FULL);
+    unlock_sem(full_oven_sem);
 
     // if sema_table_full == 0 <->  blocks cook process
-    // => decrement value before putting on the table
-    lock_sem(sem_id, SEMA_TABLE_FULL);
+    // => decrement value before putting on the tablee
+    lock_sem(full_table_sem);
 }
 
 void on_table(int type) {
-    lock_sem(sem_id, SEMA_TABLE);
+    lock_sem(table_sem);
     tab->arr[tab->to_place_idx] = type;
     tab->to_place_idx++;
     tab->to_place_idx = tab->to_place_idx % SIZE_OVEN;
@@ -83,15 +87,20 @@ void on_table(int type) {
            type,
            ovn->pizzas,
            tab->pizzas);
-    unlock_sem(sem_id, SEMA_TABLE);
+    unlock_sem(table_sem);
 }
 
 int main(){
-    sem_id = get_sem_id();
-    shm_oven_id = get_shm_oven_id();
-    shm_table_id = get_shm_table_id();
-    ovn = shmat(shm_oven_id, NULL, 0);
-    tab = shmat(shm_table_id, NULL, 0);
+    oven_sem = get_sem(SEMA_OVEN);
+    table_sem = get_sem(SEMA_TABLE);
+    full_oven_sem = get_sem(SEMA_OVEN_FULL);
+    full_table_sem = get_sem(SEMA_TABLE_FULL);
+    empty_table_sem = get_sem(SEMA_TABLE_EMPTY);
+    shm_oven_fd = get_shm_oven_fd();
+    shm_table_fd = get_shm_table_fd();
+    ovn = mmap(NULL, sizeof(oven), PROT_READ | PROT_WRITE, MAP_SHARED, shm_oven_fd, 0);
+    tab = mmap(NULL, sizeof(table), PROT_READ | PROT_WRITE, MAP_SHARED, shm_table_fd, 0);
+
     int type;
     srand(getpid());
 
@@ -105,7 +114,7 @@ int main(){
         place_n_bake(type);
 
         // taking out
-        take_out();
+        take_out(type);
 
         // placing on the table
         on_table(type);
@@ -113,7 +122,7 @@ int main(){
         // if empty_table_sem == 0 <-> blocks supplier process
         // => pizza was placed on the table -> increment its value
         // pizza can be taken by supplier
-        unlock_sem(sem_id, SEMA_TABLE_EMPTY);
+        unlock_sem(empty_table_sem);
 
     }
 

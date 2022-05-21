@@ -1,0 +1,2 @@
+dla N, M <= wielkosc stolu/pieca wykorzystujemy wszystkich pracownikow (nikt nie czeka)
+w innym wypadku musza czekac na zwolnienie zasobow

@@ -1,0 +1,13 @@
+#========================[ WNIOSKI ]========================#
+
+Dla wszystkich przypadkow:
+    a) wielu producentow, jeden konsument
+    b) jeden producent, wielu konsumentow
+    b) wielu producentow, wielu konsumentow
+
+nie zaobserwowalem zwielokrotnienia ani utrary towaru,
+dane otrzymane z i-tego producenta sa poprawnie umieszczane
+w i-tym wierszu pliku wynikowego, cala zawartosc pliku
+wejsciowego pojawia sie w pliku wynikowym
+
+#==========================================================#

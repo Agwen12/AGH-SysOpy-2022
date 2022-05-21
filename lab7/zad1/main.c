@@ -7,118 +7,57 @@
 
 int shm_oven_id, shm_table_id, sem_id;
 
-void set_oven(oven* o){
-    for (int i = 0; i < SIZE_OVEN; i++){
-        o->arr[i] = -1;
-    }
-    o->pizzas = 0;
-    o->to_place_idx = 0;
-    o->to_take_out_idx = 0;
-}
-
-void set_table(table* t){
-    for (int i = 0; i < SIZE_OVEN; i++){
-        t->arr[i] = -1;
-    }
-    t->pizzas = 0;
-    t->to_place_idx = 0;
-    t->to_take_out_idx = 0;
-}
-
-void create_sh_m_segment(){
+void create_shared_memory_segment(){
     key_t key_o, key_t;
+    TRY((key_o = ftok(OVEN_PATH, ID_OVEN)), "Cannot generate key [oven]!\n");
+    TRY((key_t = ftok(TABLE_PATH, ID_TABLE)), "Cannot generate key [table]!\n");
+    printf("[INFO] oven key: %d, table key: %d\n", key_o, key_t);
+    TRY((shm_oven_id = shmget(key_o, sizeof(oven), IPC_CREAT | 0666)), "Cannot create shared memory segment [oven]!\n");
+    TRY((shm_table_id = shmget(key_t, sizeof(table), IPC_CREAT | 0666)), "Cannot create shared memory segment [table]!\n");
 
-    if ((key_o = ftok(OVEN_PATH, ID_OVEN)) == -1){
-        printf("Error while generating key [oven]!\n");
-        printf("%s", strerror(errno));
-        exit(1);
+    oven* ovn = shmat(shm_oven_id, NULL, 0);
+    table* tab = shmat(shm_table_id, NULL, 0);
+
+    for (int i = 0; i < SIZE_OVEN; i++){
+        ovn->arr[i] = -1;
     }
+    ovn->pizzas = 0;
+    ovn->to_place_idx = 0;
+    ovn->to_take_out_idx = 0;
 
-    if ((key_t = ftok(TABLE_PATH, ID_TABLE)) == -1){
-        printf("Error while generating key [table]!\n");
-        printf("%s", strerror(errno));
-        exit(1);
+
+    for (int i = 0; i < SIZE_OVEN; i++){
+        tab->arr[i] = -1;
     }
+    tab->pizzas = 0;
+    tab->to_place_idx = 0;
+    tab->to_take_out_idx = 0;
 
-    printf("o: %d, t: %d\n", key_o, key_t);
-    if ((shm_oven_id = shmget(key_o, sizeof(oven), IPC_CREAT | 0666)) == -1){
-        printf("Error while creating shared memory segment [oven]!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-    if ((shm_table_id = shmget(key_t, sizeof(table), IPC_CREAT | 0666)) == -1){
-        printf("Error while creating shared memory segment [table]!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-    oven* o = shmat(shm_oven_id, NULL, 0);
-    table* t = shmat(shm_table_id, NULL, 0);
-
-    set_oven(o);
-    set_table(t);
-
-    printf("OK, shared memory segment created\noven_id: %d, table_id: %d \n\n", shm_oven_id, shm_table_id);
+    printf("[INFO] OK, shared memory segment created\n[INFO] oven_id: %d, table_id: %d \n\n", shm_oven_id, shm_table_id);
 
 }
 
-void create_sem_set(){
+void create_semaphores(){
     key_t key;
-
-    if ((key = ftok(get_home_path(), ID)) == -1){
-        printf("Error while generating key!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-
-    if((sem_id = semget(key, 5, 0666 | IPC_CREAT)) == -1){
-        printf("Error while creating semaphore set!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
+    TRY((key = ftok(get_home_path(), ID)), "Cannot generate key!\n");
+    TRY((sem_id = semget(key, 5, 0666 | IPC_CREAT)), "Cannot create semaphore set!\n");
     union arg;
     arg.val = 1;
 
-    if (semctl(sem_id, SEMA_OVEN, SETVAL, arg) == -1){
-        printf("Error while setting oven semaphore value!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-    if (semctl(sem_id, SEMA_TABLE, SETVAL,arg) == -1){
-        printf("Error while setting table semaphore value!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-    // if oven is full, block cook process - cannot place pizza
+    TRY(semctl(sem_id, SEMA_OVEN, SETVAL, arg), "Cannot set oven semaphore value!\n");
+    TRY(semctl(sem_id, SEMA_TABLE, SETVAL,arg), "Cannot set table semaphore value!\n");
+    // oven is full -> block cook process == cannot put in pizza
     arg.val = SIZE_OVEN;
-    if (semctl(sem_id, SEMA_OVEN_FULL, SETVAL,arg) == -1){
-        printf("Error while setting table semaphore value!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
+    TRY(semctl(sem_id, SEMA_OVEN_FULL, SETVAL,arg), "Cannot set table semaphore value!\n");
 
-    // if table is full, block cook process - cannot place pizza
+    // table is full -> block cook process - cannot place pizza
     arg.val = SIZE_TABLE;
-    if (semctl(sem_id, SEMA_TABLE_FULL, SETVAL,arg) == -1){
-        printf("Error while setting table semaphore value!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
+    TRY(semctl(sem_id, SEMA_TABLE_FULL, SETVAL,arg), "Cannot set table semaphore value!\n");
 
-    // if table is empty, block cook process - cannot take out pizza
+    // table is empty -> block cook process - cannot take out pizza
     arg.val = 0;
-    if (semctl(sem_id, SEMA_TABLE_EMPTY, SETVAL,arg) == -1){
-        printf("Error while setting table semaphore value!\n");
-        printf("%s\n", strerror(errno));
-        exit(1);
-    }
-
-    printf("OK, semaphore set created\nsem_id: %d\n\n", sem_id);
+    TRY(semctl(sem_id, SEMA_TABLE_EMPTY, SETVAL,arg), "Cannot set table semaphore value!\n");
+    printf("[INFO] OK, semaphore set created\n[INFO] sem_id: %d\n\n", sem_id);
 }
 
 void handler(int signum){
@@ -131,37 +70,35 @@ void handler(int signum){
 int main(int argc, char* argv[]){
 
     if (argc != 3){
-        printf("Wrong number of arguments!\n");
+        printf("[ERROR] Invalid number of arguments!\n");
         return -1;
     }
 
+    int chefs = atoi(argv[1]);
+    int ubers = atoi(argv[2]);
+
     signal(SIGINT, handler);
 
-    int cooks = atoi(argv[1]);
-    int suppliers = atoi(argv[2]);
+    create_shared_memory_segment();
+    create_semaphores();
 
-    create_sh_m_segment();
-    create_sem_set();
-
-    for (int i = 0; i < cooks; i++){
+    for (int i = 0; i < chefs; i++){
         pid_t pid = fork();
         if (pid == 0){
-            execl("./cook", "./cook", NULL);
-            printf("!!! Return not expected, execl() error !!!\n");
-
+            execl("./chef", "./chef", NULL);
+            printf("[HUGE ERROR] RETURN NOT EXPECTED\n");
         }
     }
 
-    for (int i = 0; i < suppliers; i++){
+    for (int i = 0; i < ubers; i++){
         pid_t pid = fork();
         if (pid == 0){
-            execl("./supplier", "./supplier", NULL);
-            printf("!!! Return not expected, execl() error !!!\n");
-
+            execl("./uberEats", "./uberEats", NULL);
+            printf("[HUGE ERROR] RETURN NOT EXPECTED\n");
         }
     }
 
-    for(int i = 0; i < cooks + suppliers; i++)
+    for(int i = 0; i < chefs + ubers; i++)
         wait(NULL);
 
 
