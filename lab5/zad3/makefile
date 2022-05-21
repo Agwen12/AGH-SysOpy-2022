@@ -10,11 +10,6 @@ compile:
 
 test: clean compile
 	./main
-#	cat consumer_files/many_to_many_res.txt
-#	printf "\n"
-#	cat consumer_files/many_to_one_res.txt
-#	printf "\n"
-#	cat consumer_files/one_to_many_res.txt
 
 clean:
 	rm -f main consumer producer pipe

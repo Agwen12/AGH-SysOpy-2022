@@ -1,0 +1,8 @@
+skladnik1 = cat commands | wc -l
+skladnik2 = ls | grep n | sort -n
+skladnik3 = cat /etc/passwd | wc -l
+skladnik4 = grep 'l' /etc/passwd
+skladnik5 = wc -l
+
+skladnik4 | skladnik5
+skladnik1

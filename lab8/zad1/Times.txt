@@ -1,0 +1,420 @@
+#====================[ INFO ]====================#
+	 THREADS:	1
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   833 [μs]
+[INFO] TOTAL TIME: 1122 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	1
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1143 [μs]
+[INFO] TOTAL TIME: 1443 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	1
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   505 [μs]
+[INFO] TOTAL TIME: 809 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	1
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:   967 [μs]
+[INFO] TOTAL TIME: 1358 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	2
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   647 [μs]
+[INFO] THREAD:    1 time:   601 [μs]
+[INFO] TOTAL TIME: 999 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	2
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1614 [μs]
+[INFO] THREAD:    1 time:  1790 [μs]
+[INFO] TOTAL TIME: 1931 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	2
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   269 [μs]
+[INFO] THREAD:    1 time:   238 [μs]
+[INFO] TOTAL TIME: 505 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	2
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:   619 [μs]
+[INFO] THREAD:    1 time:   592 [μs]
+[INFO] TOTAL TIME: 1031 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	4
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:  1210 [μs]
+[INFO] THREAD:    1 time:   799 [μs]
+[INFO] THREAD:    2 time:   718 [μs]
+[INFO] THREAD:    3 time:   998 [μs]
+[INFO] TOTAL TIME: 1423 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	4
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1085 [μs]
+[INFO] THREAD:    1 time:  1675 [μs]
+[INFO] THREAD:    2 time:  1545 [μs]
+[INFO] THREAD:    3 time:   996 [μs]
+[INFO] TOTAL TIME: 1926 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	4
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   244 [μs]
+[INFO] THREAD:    1 time:   259 [μs]
+[INFO] THREAD:    2 time:   239 [μs]
+[INFO] THREAD:    3 time:   161 [μs]
+[INFO] TOTAL TIME: 723 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	4
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:   331 [μs]
+[INFO] THREAD:    1 time:   338 [μs]
+[INFO] THREAD:    2 time:   269 [μs]
+[INFO] THREAD:    3 time:   278 [μs]
+[INFO] TOTAL TIME: 744 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	8
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:  1173 [μs]
+[INFO] THREAD:    1 time:  1318 [μs]
+[INFO] THREAD:    2 time:  1126 [μs]
+[INFO] THREAD:    3 time:   862 [μs]
+[INFO] THREAD:    4 time:  1097 [μs]
+[INFO] THREAD:    5 time:  1272 [μs]
+[INFO] THREAD:    6 time:   807 [μs]
+[INFO] THREAD:    7 time:   973 [μs]
+[INFO] TOTAL TIME: 2100 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	8
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1827 [μs]
+[INFO] THREAD:    1 time:  1876 [μs]
+[INFO] THREAD:    2 time:  1905 [μs]
+[INFO] THREAD:    3 time:  2299 [μs]
+[INFO] THREAD:    4 time:  2142 [μs]
+[INFO] THREAD:    5 time:  1599 [μs]
+[INFO] THREAD:    6 time:  1768 [μs]
+[INFO] THREAD:    7 time:  1575 [μs]
+[INFO] TOTAL TIME: 2677 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	8
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   162 [μs]
+[INFO] THREAD:    1 time:    98 [μs]
+[INFO] THREAD:    2 time:   126 [μs]
+[INFO] THREAD:    3 time:   111 [μs]
+[INFO] THREAD:    4 time:   126 [μs]
+[INFO] THREAD:    5 time:   144 [μs]
+[INFO] THREAD:    6 time:   169 [μs]
+[INFO] THREAD:    7 time:   167 [μs]
+[INFO] TOTAL TIME: 825 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	8
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:   354 [μs]
+[INFO] THREAD:    1 time:   339 [μs]
+[INFO] THREAD:    2 time:   252 [μs]
+[INFO] THREAD:    3 time:   263 [μs]
+[INFO] THREAD:    4 time:   253 [μs]
+[INFO] THREAD:    5 time:   259 [μs]
+[INFO] THREAD:    6 time:   196 [μs]
+[INFO] THREAD:    7 time:   159 [μs]
+[INFO] TOTAL TIME: 931 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	16
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:  1132 [μs]
+[INFO] THREAD:    1 time:  1826 [μs]
+[INFO] THREAD:    2 time:  1325 [μs]
+[INFO] THREAD:    3 time:  1165 [μs]
+[INFO] THREAD:    4 time:  1133 [μs]
+[INFO] THREAD:    5 time:  1080 [μs]
+[INFO] THREAD:    6 time:  1215 [μs]
+[INFO] THREAD:    7 time:  1028 [μs]
+[INFO] THREAD:    8 time:   914 [μs]
+[INFO] THREAD:    9 time:  1032 [μs]
+[INFO] THREAD:   10 time:  1021 [μs]
+[INFO] THREAD:   11 time:   926 [μs]
+[INFO] THREAD:   12 time:   929 [μs]
+[INFO] THREAD:   13 time:   930 [μs]
+[INFO] THREAD:   14 time:   744 [μs]
+[INFO] THREAD:   15 time:   850 [μs]
+[INFO] TOTAL TIME: 2939 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	16
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1904 [μs]
+[INFO] THREAD:    1 time:  1845 [μs]
+[INFO] THREAD:    2 time:  1781 [μs]
+[INFO] THREAD:    3 time:  1763 [μs]
+[INFO] THREAD:    4 time:  1842 [μs]
+[INFO] THREAD:    5 time:  1630 [μs]
+[INFO] THREAD:    6 time:  2118 [μs]
+[INFO] THREAD:    7 time:  1870 [μs]
+[INFO] THREAD:    8 time:  2288 [μs]
+[INFO] THREAD:    9 time:  1609 [μs]
+[INFO] THREAD:   10 time:  1581 [μs]
+[INFO] THREAD:   11 time:  1023 [μs]
+[INFO] THREAD:   12 time:  1598 [μs]
+[INFO] THREAD:   13 time:  1001 [μs]
+[INFO] THREAD:   14 time:  1177 [μs]
+[INFO] THREAD:   15 time:  1756 [μs]
+[INFO] TOTAL TIME: 5741 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	16
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:    72 [μs]
+[INFO] THREAD:    1 time:    94 [μs]
+[INFO] THREAD:    2 time:    55 [μs]
+[INFO] THREAD:    3 time:    70 [μs]
+[INFO] THREAD:    4 time:    38 [μs]
+[INFO] THREAD:    5 time:   101 [μs]
+[INFO] THREAD:    6 time:   138 [μs]
+[INFO] THREAD:    7 time:   128 [μs]
+[INFO] THREAD:    8 time:    91 [μs]
+[INFO] THREAD:    9 time:    82 [μs]
+[INFO] THREAD:   10 time:    80 [μs]
+[INFO] THREAD:   11 time:    51 [μs]
+[INFO] THREAD:   12 time:    58 [μs]
+[INFO] THREAD:   13 time:    38 [μs]
+[INFO] THREAD:   14 time:    42 [μs]
+[INFO] THREAD:   15 time:   178 [μs]
+[INFO] TOTAL TIME: 1194 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	16
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:   178 [μs]
+[INFO] THREAD:    1 time:   163 [μs]
+[INFO] THREAD:    2 time:   139 [μs]
+[INFO] THREAD:    3 time:   126 [μs]
+[INFO] THREAD:    4 time:   107 [μs]
+[INFO] THREAD:    5 time:   113 [μs]
+[INFO] THREAD:    6 time:   144 [μs]
+[INFO] THREAD:    7 time:   123 [μs]
+[INFO] THREAD:    8 time:    92 [μs]
+[INFO] THREAD:    9 time:   112 [μs]
+[INFO] THREAD:   10 time:   114 [μs]
+[INFO] THREAD:   11 time:   119 [μs]
+[INFO] THREAD:   12 time:   116 [μs]
+[INFO] THREAD:   13 time:   120 [μs]
+[INFO] THREAD:   14 time:   120 [μs]
+[INFO] THREAD:   15 time:   134 [μs]
+[INFO] TOTAL TIME: 1014 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	32
+	 VARIANT:	variant_1
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:   992 [μs]
+[INFO] THREAD:    1 time:  1086 [μs]
+[INFO] THREAD:    2 time:   963 [μs]
+[INFO] THREAD:    3 time:   989 [μs]
+[INFO] THREAD:    4 time:  1115 [μs]
+[INFO] THREAD:    5 time:  1628 [μs]
+[INFO] THREAD:    6 time:  1150 [μs]
+[INFO] THREAD:    7 time:  1066 [μs]
+[INFO] THREAD:    8 time:   898 [μs]
+[INFO] THREAD:    9 time:  1049 [μs]
+[INFO] THREAD:   10 time:  1109 [μs]
+[INFO] THREAD:   11 time:  2149 [μs]
+[INFO] THREAD:   12 time:  1031 [μs]
+[INFO] THREAD:   13 time:  1022 [μs]
+[INFO] THREAD:   14 time:  1036 [μs]
+[INFO] THREAD:   15 time:   968 [μs]
+[INFO] THREAD:   16 time:  1010 [μs]
+[INFO] THREAD:   17 time:  1029 [μs]
+[INFO] THREAD:   18 time:  1036 [μs]
+[INFO] THREAD:   19 time:  1000 [μs]
+[INFO] THREAD:   20 time:   965 [μs]
+[INFO] THREAD:   21 time:   966 [μs]
+[INFO] THREAD:   22 time:   937 [μs]
+[INFO] THREAD:   23 time:  1864 [μs]
+[INFO] THREAD:   24 time:   739 [μs]
+[INFO] THREAD:   25 time:   886 [μs]
+[INFO] THREAD:   26 time:   902 [μs]
+[INFO] THREAD:   27 time:  1581 [μs]
+[INFO] THREAD:   28 time:   872 [μs]
+[INFO] THREAD:   29 time:   873 [μs]
+[INFO] THREAD:   30 time:   514 [μs]
+[INFO] THREAD:   31 time:   576 [μs]
+[INFO] TOTAL TIME: 5386 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	32
+	 VARIANT:	variant_1
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:  1876 [μs]
+[INFO] THREAD:    1 time:  1789 [μs]
+[INFO] THREAD:    2 time:  1663 [μs]
+[INFO] THREAD:    3 time:  1892 [μs]
+[INFO] THREAD:    4 time:  1915 [μs]
+[INFO] THREAD:    5 time:  1916 [μs]
+[INFO] THREAD:    6 time:  2157 [μs]
+[INFO] THREAD:    7 time:  2005 [μs]
+[INFO] THREAD:    8 time:  1795 [μs]
+[INFO] THREAD:    9 time:  2434 [μs]
+[INFO] THREAD:   10 time:  1951 [μs]
+[INFO] THREAD:   11 time:  1951 [μs]
+[INFO] THREAD:   12 time:  4339 [μs]
+[INFO] THREAD:   13 time:  2067 [μs]
+[INFO] THREAD:   14 time:  2353 [μs]
+[INFO] THREAD:   15 time:  4922 [μs]
+[INFO] THREAD:   16 time:  2421 [μs]
+[INFO] THREAD:   17 time:  1711 [μs]
+[INFO] THREAD:   18 time:  3356 [μs]
+[INFO] THREAD:   19 time:  1644 [μs]
+[INFO] THREAD:   20 time:  1682 [μs]
+[INFO] THREAD:   21 time:  1235 [μs]
+[INFO] THREAD:   22 time:  1708 [μs]
+[INFO] THREAD:   23 time:  1625 [μs]
+[INFO] THREAD:   24 time:  1691 [μs]
+[INFO] THREAD:   25 time:  1721 [μs]
+[INFO] THREAD:   26 time:  1609 [μs]
+[INFO] THREAD:   27 time:  1235 [μs]
+[INFO] THREAD:   28 time:  1578 [μs]
+[INFO] THREAD:   29 time:  1673 [μs]
+[INFO] THREAD:   30 time:  1728 [μs]
+[INFO] THREAD:   31 time:  1057 [μs]
+[INFO] TOTAL TIME: 8400 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	32
+	 VARIANT:	variant_2
+	 IMAGE:	./images/casablanca.ascii.pgm
+[INFO] THREAD:    0 time:    96 [μs]
+[INFO] THREAD:    1 time:   106 [μs]
+[INFO] THREAD:    2 time:    45 [μs]
+[INFO] THREAD:    3 time:    33 [μs]
+[INFO] THREAD:    4 time:    34 [μs]
+[INFO] THREAD:    5 time:    22 [μs]
+[INFO] THREAD:    6 time:    31 [μs]
+[INFO] THREAD:    7 time:    38 [μs]
+[INFO] THREAD:    8 time:    35 [μs]
+[INFO] THREAD:    9 time:    35 [μs]
+[INFO] THREAD:   10 time:    22 [μs]
+[INFO] THREAD:   11 time:    35 [μs]
+[INFO] THREAD:   12 time:    23 [μs]
+[INFO] THREAD:   13 time:    23 [μs]
+[INFO] THREAD:   14 time:    36 [μs]
+[INFO] THREAD:   15 time:    20 [μs]
+[INFO] THREAD:   16 time:    19 [μs]
+[INFO] THREAD:   17 time:    23 [μs]
+[INFO] THREAD:   18 time:    22 [μs]
+[INFO] THREAD:   19 time:    22 [μs]
+[INFO] THREAD:   20 time:    23 [μs]
+[INFO] THREAD:   21 time:    33 [μs]
+[INFO] THREAD:   22 time:    22 [μs]
+[INFO] THREAD:   23 time:    19 [μs]
+[INFO] THREAD:   24 time:    19 [μs]
+[INFO] THREAD:   25 time:    23 [μs]
+[INFO] THREAD:   26 time:    31 [μs]
+[INFO] THREAD:   27 time:    22 [μs]
+[INFO] THREAD:   28 time:    22 [μs]
+[INFO] THREAD:   29 time:    22 [μs]
+[INFO] THREAD:   30 time:    33 [μs]
+[INFO] THREAD:   31 time:    37 [μs]
+[INFO] TOTAL TIME: 1663 [μs]
+#================================================#
+
+#====================[ INFO ]====================#
+	 THREADS:	32
+	 VARIANT:	variant_2
+	 IMAGE:	./images/totem.ascii.pgm
+[INFO] THREAD:    0 time:    68 [μs]
+[INFO] THREAD:    1 time:    48 [μs]
+[INFO] THREAD:    2 time:    50 [μs]
+[INFO] THREAD:    3 time:    62 [μs]
+[INFO] THREAD:    4 time:    59 [μs]
+[INFO] THREAD:    5 time:    41 [μs]
+[INFO] THREAD:    6 time:    39 [μs]
+[INFO] THREAD:    7 time:    50 [μs]
+[INFO] THREAD:    8 time:    69 [μs]
+[INFO] THREAD:    9 time:    65 [μs]
+[INFO] THREAD:   10 time:    42 [μs]
+[INFO] THREAD:   11 time:    40 [μs]
+[INFO] THREAD:   12 time:    40 [μs]
+[INFO] THREAD:   13 time:    44 [μs]
+[INFO] THREAD:   14 time:    41 [μs]
+[INFO] THREAD:   15 time:    40 [μs]
+[INFO] THREAD:   16 time:    43 [μs]
+[INFO] THREAD:   17 time:    40 [μs]
+[INFO] THREAD:   18 time:    40 [μs]
+[INFO] THREAD:   19 time:    40 [μs]
+[INFO] THREAD:   20 time:    39 [μs]
+[INFO] THREAD:   21 time:    43 [μs]
+[INFO] THREAD:   22 time:    40 [μs]
+[INFO] THREAD:   23 time:    40 [μs]
+[INFO] THREAD:   24 time:    48 [μs]
+[INFO] THREAD:   25 time:    39 [μs]
+[INFO] THREAD:   26 time:    44 [μs]
+[INFO] THREAD:   27 time:    51 [μs]
+[INFO] THREAD:   28 time:    39 [μs]
+[INFO] THREAD:   29 time:    49 [μs]
+[INFO] THREAD:   30 time:    41 [μs]
+[INFO] THREAD:   31 time:    50 [μs]
+[INFO] TOTAL TIME: 1726 [μs]
+#================================================#
+
